@@ -16,8 +16,9 @@ class _ViewWebState extends State<ViewWeb> {
     final _pageNotifier = ValueNotifier<int>(0);
 
     return Scaffold(
+        backgroundColor: Colors.black,
         body: Padding(
-            padding: EdgeInsets.symmetric(vertical: 40, horizontal: 100),
+            padding: EdgeInsets.all(0),
             child: PageView(
               controller: _controller,
               scrollDirection: Axis.vertical,

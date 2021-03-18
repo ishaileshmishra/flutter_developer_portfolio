@@ -14,6 +14,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         leading: Padding(
           padding: EdgeInsets.symmetric(horizontal: 50),
