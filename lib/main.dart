@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_dev/src/home.dart';
+import 'package:portfolio_dev/src/home/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
       theme: ThemeData(
-        // This is the theme of your application.
-        //primarySwatch: Colors.blueGrey,
-      ),
+          // This is the theme of your application.
+          //primarySwatch: Colors.blueGrey,
+          ),
       home: HomeView(title: 'developer ishaileshmishra'),
     );
   }

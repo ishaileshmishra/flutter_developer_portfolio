@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeViewLarge extends StatefulWidget {
+class ViewWeb extends StatefulWidget {
   @override
-  _HomeViewLargeState createState() => _HomeViewLargeState();
+  _ViewWebState createState() => _ViewWebState();
 }
 
-class _HomeViewLargeState extends State<HomeViewLarge> {
+class _ViewWebState extends State<ViewWeb> {
   @override
   Widget build(BuildContext context) {
     const urlProfile =
@@ -61,23 +61,23 @@ class _HomeViewLargeState extends State<HomeViewLarge> {
 
   SizedBox buildWorkingHeap(Size mediaQuery) {
     return SizedBox(
-              height: 300,
-              width: (mediaQuery.height)/2,
-              child: GridView.count(
-                crossAxisCount: 4,
-                children: List.generate(20, (index) {
-                  return Card(
-                    child: Image.network("https://robohash.org/$index"),
-                  ); //robohash.org api provide you different images for any number you are giving
-                }),
-              ),
-            );
+      height: 300,
+      width: (mediaQuery.height) / 2,
+      child: GridView.count(
+        crossAxisCount: 4,
+        children: List.generate(20, (index) {
+          return Card(
+            child: Image.network("https://robohash.org/$index"),
+          ); //robohash.org api provide you different images for any number you are giving
+        }),
+      ),
+    );
   }
 
   myCareerSoFor({String demoTxt}) {
     return Expanded(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "My Career so for",

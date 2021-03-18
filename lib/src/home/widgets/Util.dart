@@ -31,7 +31,7 @@ TextButton navBtn(title, String url) {
   return TextButton(
       onPressed: () {
         print("Launching: $url");
-        _launchURL("https://www.linkedin.com/in/ishaileshmishra");
+        _launchURL(url);
       },
       child: Text(title));
 }
