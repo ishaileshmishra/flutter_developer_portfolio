@@ -1,4 +1,5 @@
-int pageNotifier = 0;
+var backgroundColor = "#1c1c1c";
+const redColor = "0xffc32865";
 
 const urlProfile =
     "https://images.pexels.com/photos/848117/pexels-photo-848117.jpeg";

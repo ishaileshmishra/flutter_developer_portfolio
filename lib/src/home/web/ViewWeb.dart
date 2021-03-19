@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_dev/src/home/web/PageOneView.dart';
+import 'package:portfolio_dev/src/home/web/PageTwoView.dart';
 
 class ViewWeb extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _ViewWebState extends State<ViewWeb> {
                   pageNotifier: 0,
                   totalPage: _totalPage,
                 ),
-                PageOneView(
+                PageTwoView(
                   pageNotifier: 1,
                   totalPage: _totalPage,
                 ),

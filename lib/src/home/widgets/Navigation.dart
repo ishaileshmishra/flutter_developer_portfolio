@@ -1,20 +1,12 @@
+// Developed by shailesh mishra (ishaileshmishra)
+// Github: ishaileshmishra
+// LinkedIn: www.linkedin/in/ishaileshmishra
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_dev/src/home/widgets/Util.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-
-final _items = [
-  Colors.blue,
-  Colors.orange,
-  Colors.green,
-  Colors.pink,
-  Colors.red,
-  Colors.amber,
-  Colors.brown,
-  Colors.yellow,
-  Colors.blue,
-];
 
 buildCircleIndicator(_currentPos, totalCount) {
   return Padding(
@@ -27,6 +19,7 @@ buildCircleIndicator(_currentPos, totalCount) {
       decorator: DotsDecorator(
         size: const Size.square(9.0),
         activeSize: const Size(9.0, 18.0),
+        activeColor: Color(0xffc32865),
         activeShape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       ),
@@ -152,9 +145,9 @@ class HowdayTextWidget extends StatelessWidget {
       text: new TextSpan(
         children: <TextSpan>[
           TextSpan(
-              text: 'Howdy 🙏 ',
+              text: 'Howdy, 🙏 ',
               style: GoogleFonts.righteous(
-                  color: Colors.red,
+                  color: Color(0xffc32865),
                   fontSize: 100,
                   fontWeight: FontWeight.normal)),
           TextSpan(
@@ -219,8 +212,8 @@ class CommonBottonNav extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "© Shailesh 2021.",
-              style: GoogleFonts.righteous(),
+              "Developer © Shailesh Mishra 2021.",
+              style: GoogleFonts.righteous(fontSize: 14),
             ),
             Row(
               children: [

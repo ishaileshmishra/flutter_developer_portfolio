@@ -43,7 +43,6 @@ class _PageOneViewState extends State<PageOneView> {
               WatchResumeClip(),
             ],
           ),
-          CommonBottonNav(),
           buildCircleIndicator(_currentPage, _totalPage),
         ],
       ),
