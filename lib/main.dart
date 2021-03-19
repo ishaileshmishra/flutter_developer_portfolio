@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_dev/src/home/home.dart';
 
 void main() {
@@ -13,9 +14,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
       theme: ThemeData(
-          // This is the theme of your application.
-          //primarySwatch: Colors.blueGrey,
-          ),
+        // This is the theme of your application.
+        //primarySwatch: Colors.blueGrey,
+        bottomAppBarColor: Colors.green,
+        //fontFamily: 'pt_sans',
+        textTheme: GoogleFonts.righteousTextTheme(
+          Theme.of(context).textTheme,
+        ),
+      ),
       home: HomeView(title: 'developer ishaileshmishra'),
     );
   }

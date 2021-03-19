@@ -21,7 +21,11 @@ class _ViewWebState extends State<ViewWeb> {
             child: PageView(
               controller: _controller,
               scrollDirection: Axis.vertical,
-              onPageChanged: (int _count) {},
+              onPageChanged: (int _count) {
+                setState(() {
+                  print(_count);
+                });
+              },
               children: [
                 PageOneView(
                   pageNotifier: 0,

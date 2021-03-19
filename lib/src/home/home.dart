@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_dev/src/home/mobile/ViewMobile.dart';
 import 'package:portfolio_dev/src/home/web/ViewWeb.dart';
 
@@ -17,22 +19,28 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 50),
-          child: Icon(
-            Icons.devices_other,
-            size: 40,
-          ),
+        leading: Icon(
+          CupertinoIcons.device_laptop,
+          size: 30,
         ),
         actions: [
           Row(
             children: [
               SizedBox(width: 180),
-              Text("+91 83 780-26-266"),
+              Text(
+                "+91 83 780-26-266",
+                style: GoogleFonts.righteous(),
+              ),
               SizedBox(width: 20),
-              Text("/"),
+              Text(
+                "/",
+                style: TextStyle(color: Colors.grey),
+              ),
               SizedBox(width: 20),
-              Text("mshaileshr@gmail.com")
+              Text(
+                "mshaileshr@gmail.com",
+                style: GoogleFonts.righteous(),
+              )
             ],
           ),
           Spacer(),

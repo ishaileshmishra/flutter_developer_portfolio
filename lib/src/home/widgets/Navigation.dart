@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_dev/src/home/widgets/Util.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
@@ -151,16 +152,23 @@ class HowdayTextWidget extends StatelessWidget {
       text: new TextSpan(
         children: <TextSpan>[
           TextSpan(
-            text: 'Howdy ',
-            style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 100, color: Colors.red),
-          ),
+              text: 'Howdy 🙏 ',
+              style: GoogleFonts.righteous(
+                  color: Colors.red,
+                  fontSize: 100,
+                  fontWeight: FontWeight.normal)),
           TextSpan(
               text: "I'm \nShailesh",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
+              style: GoogleFonts.righteous(
+                  color: Colors.white,
                   fontSize: 100,
-                  color: Colors.white)),
+                  fontWeight: FontWeight.normal)
+
+              // TextStyle(
+              //     fontWeight: FontWeight.bold,
+              //     fontSize: 100,
+              //     color: Colors.white),
+              ),
         ],
       ),
     );
@@ -189,7 +197,7 @@ class WatchResumeClip extends StatelessWidget {
         ),
         Text(
           'Watch Resume',
-          style: TextStyle(fontSize: 18),
+          style: GoogleFonts.righteous(fontSize: 20),
         )
       ],
     );
@@ -210,7 +218,10 @@ class CommonBottonNav extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("© Shailesh 2021."),
+            Text(
+              "© Shailesh 2021.",
+              style: GoogleFonts.righteous(),
+            ),
             Row(
               children: [
                 socialIcon('/icons/twitter.png'),
