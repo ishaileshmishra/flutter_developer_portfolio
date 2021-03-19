@@ -1,3 +1,5 @@
+int pageNotifier = 0;
+
 const urlProfile =
     "https://images.pexels.com/photos/848117/pexels-photo-848117.jpeg";
 

@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_dev/src/home/widgets/Util.dart';
-import 'package:page_view_indicators/page_view_indicators.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 
 final _items = [
   Colors.blue,
@@ -15,12 +15,21 @@ final _items = [
   Colors.blue,
 ];
 
-buildCircleIndicator(_currentPageNotifier) {
-  return CirclePageIndicator(
-    dotColor: Colors.blue,
-    selectedDotColor: Colors.red,
-    itemCount: _items.length,
-    currentPageNotifier: _currentPageNotifier,
+buildCircleIndicator(_currentPos, totalCount) {
+  return Padding(
+    padding: EdgeInsets.all(50),
+    child: DotsIndicator(
+      onTap: (position) => print('page $position'),
+      position: _currentPos,
+      dotsCount: totalCount,
+      axis: Axis.vertical,
+      decorator: DotsDecorator(
+        size: const Size.square(9.0),
+        activeSize: const Size(9.0, 18.0),
+        activeShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+      ),
+    ),
   );
 }
 
@@ -129,4 +138,101 @@ SizedBox buildWorkingHeap(Size mediaQuery) {
       }),
     ),
   );
+}
+
+class HowdayTextWidget extends StatelessWidget {
+  const HowdayTextWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: new TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+            text: 'Howdy ',
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 100, color: Colors.red),
+          ),
+          TextSpan(
+              text: "I'm \nShailesh",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 100,
+                  color: Colors.white)),
+        ],
+      ),
+    );
+  }
+}
+
+class WatchResumeClip extends StatelessWidget {
+  const WatchResumeClip({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 300,
+          child: Divider(
+            color: Colors.white,
+            thickness: 1,
+          ),
+        ),
+        Icon(
+          CupertinoIcons.play_circle_fill,
+          size: 150,
+        ),
+        Text(
+          'Watch Resume',
+          style: TextStyle(fontSize: 18),
+        )
+      ],
+    );
+  }
+}
+
+class CommonBottonNav extends StatelessWidget {
+  const CommonBottonNav({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+        bottom: 20,
+        left: 20,
+        right: 20,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("© Shailesh 2021."),
+            Row(
+              children: [
+                socialIcon('/icons/twitter.png'),
+                SizedBox(width: 20),
+                socialIcon('/icons/github.png'),
+                SizedBox(width: 20),
+                socialIcon('/icons/linkedin.png'),
+                SizedBox(width: 20),
+                socialIcon('/icons/facebook.png'),
+              ],
+            )
+          ],
+        ));
+  }
+
+  Image socialIcon(String _imgIcon) {
+    return Image.asset(
+      _imgIcon,
+      fit: BoxFit.scaleDown,
+      color: Colors.white,
+      width: 30,
+      height: 30,
+    );
+  }
 }

@@ -16,6 +16,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         leading: Padding(
           padding: EdgeInsets.symmetric(horizontal: 50),
           child: Icon(

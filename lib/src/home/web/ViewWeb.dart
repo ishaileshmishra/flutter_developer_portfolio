@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_dev/src/home/web/PageOne.dart';
 import 'package:portfolio_dev/src/home/web/PageOneView.dart';
 
 class ViewWeb extends StatefulWidget {
@@ -11,9 +10,9 @@ class ViewWeb extends StatefulWidget {
 class _ViewWebState extends State<ViewWeb> {
   @override
   Widget build(BuildContext context) {
-    var _mediaQuery = MediaQuery.of(context).size;
+    // var _mediaQuery = MediaQuery.of(context).size;
     final _controller = PageController(initialPage: 0);
-    final _pageNotifier = ValueNotifier<int>(0);
+    const _totalPage = 5;
 
     return Scaffold(
         backgroundColor: Colors.black,
@@ -22,15 +21,28 @@ class _ViewWebState extends State<ViewWeb> {
             child: PageView(
               controller: _controller,
               scrollDirection: Axis.vertical,
-              onPageChanged: (int _count) {
-                print(_count);
-                _pageNotifier.value = _count;
-              },
+              onPageChanged: (int _count) {},
               children: [
-                PageOneView(),
-                PageOne(mediaQuery: _mediaQuery, pageNotifier: _pageNotifier),
-                PageOne(mediaQuery: _mediaQuery, pageNotifier: _pageNotifier),
-                PageOne(mediaQuery: _mediaQuery, pageNotifier: _pageNotifier)
+                PageOneView(
+                  pageNotifier: 0,
+                  totalPage: _totalPage,
+                ),
+                PageOneView(
+                  pageNotifier: 1,
+                  totalPage: _totalPage,
+                ),
+                PageOneView(
+                  pageNotifier: 2,
+                  totalPage: _totalPage,
+                ),
+                PageOneView(
+                  pageNotifier: 3,
+                  totalPage: _totalPage,
+                ),
+                PageOneView(
+                  pageNotifier: 4,
+                  totalPage: _totalPage,
+                ),
               ],
             )));
   }

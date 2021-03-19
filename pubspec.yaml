@@ -30,8 +30,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_icons: ^1.1.0
   url_launcher: ^6.0.2
-  page_view_indicators: ^2.0.0
-  smooth_page_indicator: ^0.2.1
+  dots_indicator: ^2.0.0
+
 
 dev_dependencies:
   flutter_test:
