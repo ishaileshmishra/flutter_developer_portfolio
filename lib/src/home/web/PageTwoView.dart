@@ -99,20 +99,27 @@ class SpecializationCategory extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SpecialColum(),
-        SizedBox(width: 20),
-        SpecialColum(),
-        SizedBox(width: 20),
-        SpecialColum(),
+        SpecializedColumn(title: 'MOBILE CODING', abtDescription: demoTxt),
+        SizedBox(height: 20, width: 20),
+        SpecializedColumn(title: 'WEB DESIGN', abtDescription: demoTxt),
+        SizedBox(height: 20, width: 20),
+        SpecializedColumn(title: 'PYTHON', abtDescription: demoTxt),
       ],
     );
   }
 }
 
-class SpecialColum extends StatelessWidget {
-  const SpecialColum({
+class SpecializedColumn extends StatelessWidget {
+  const SpecializedColumn({
     Key key,
-  }) : super(key: key);
+    @required String title,
+    @required String abtDescription,
+  })  : _title = title,
+        _abtDescription = abtDescription,
+        super(key: key);
+
+  final String _title;
+  final String _abtDescription;
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +134,7 @@ class SpecialColum extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            "WEB DESIGN",
+            _title,
             style: GoogleFonts.righteous(fontSize: 18),
           ),
           SizedBox(height: 10),
@@ -135,7 +142,7 @@ class SpecialColum extends StatelessWidget {
             height: 100,
             width: 300,
             child: Text(
-              demoTxt,
+              _abtDescription,
               maxLines: 4,
               style: GoogleFonts.righteous(fontSize: 13),
             ),

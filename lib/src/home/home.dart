@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_dev/src/home/mobile/ViewMobile.dart';
+import 'package:portfolio_dev/src/home/tablet/ViewTablet.dart';
 import 'package:portfolio_dev/src/home/web/ViewWeb.dart';
 import 'package:portfolio_dev/src/home/widgets/Navigation.dart';
 
@@ -17,9 +18,9 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff1c1c1c),
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Color(0xff1c1c1c),
           leading: Icon(
             CupertinoIcons.device_laptop,
             size: 30,
@@ -48,22 +49,64 @@ class _HomeViewState extends State<HomeView> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 50),
               child: InkWell(
-                onTap: () => print('Hola, Open the drawer here'),
+                onTap: () {
+                  if (Scaffold.of(context).isDrawerOpen) {
+                    Scaffold.of(context).openEndDrawer();
+                  } else {
+                    Scaffold.of(context).openDrawer();
+                  }
+                },
                 child: Icon(Icons.menu, size: 30),
               ),
             )
           ],
         ),
-
+        drawer: Drawer(
+          // Add a ListView to the drawer. This ensures the user can scroll
+          // through the options in the drawer if there isn't enough vertical
+          // space to fit everything.
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Text('Drawer Header'),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('Item 1'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+              ListTile(
+                title: Text('Item 2'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+            ],
+          ),
+        ),
         // Builds a widget tree that can depend on the parent widget's size.
         // [find here](https://api.flutter.dev/flutter/widgets/LayoutBuilder-class.html)
         body: LayoutBuilder(builder: (context, constraints) {
-          return constraints.maxWidth < 600 ? ViewMobile() : ViewWeb();
+          if (constraints.maxWidth < 640) {
+            return ViewMobile();
+          } else if (constraints.maxWidth < 1007) {
+            return ViewTablet();
+          } else {
+            return ViewWeb();
+          }
         }),
         bottomNavigationBar: Container(
           height: 100,
           padding: EdgeInsets.symmetric(horizontal: 20),
-          color: Colors.transparent,
+          //color: Color(0xff1c1c1c),
           child: CommonBottonNav(),
         ));
   }

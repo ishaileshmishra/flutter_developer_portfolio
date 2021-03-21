@@ -1,4 +1,4 @@
-var backgroundColor = "#1c1c1c";
+const backgroundColor = "0xff1c1c1c";
 const redColor = "0xffc32865";
 
 const urlProfile =

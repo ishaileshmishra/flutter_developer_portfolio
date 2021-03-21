@@ -16,7 +16,7 @@ class _ViewWebState extends State<ViewWeb> {
     const _totalPage = 5;
 
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff1c1c1c),
         body: Padding(
             padding: EdgeInsets.all(0),
             child: PageView(

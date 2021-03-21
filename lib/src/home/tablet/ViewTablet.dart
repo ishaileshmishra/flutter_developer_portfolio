@@ -8,6 +8,8 @@ class ViewTablet extends StatefulWidget {
 class _ViewTabletState extends State<ViewTablet> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Text('View in Tablet'),
+    );
   }
 }

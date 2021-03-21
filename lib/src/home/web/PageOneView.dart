@@ -30,7 +30,10 @@ class _PageOneViewState extends State<PageOneView> {
         fit: StackFit.loose,
         alignment: AlignmentDirectional.centerEnd,
         children: [
-          Image.asset('img/marcelo.png', fit: BoxFit.fill),
+          Image.asset(
+            'img/preview.png',
+            fit: BoxFit.contain,
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,

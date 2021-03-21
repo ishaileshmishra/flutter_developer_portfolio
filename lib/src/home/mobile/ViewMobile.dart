@@ -8,6 +8,8 @@ class ViewMobile extends StatefulWidget {
 class _ViewMobileState extends State<ViewMobile> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Text('View in mobile'),
+    );
   }
 }
