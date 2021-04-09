@@ -1,4 +1,4 @@
-# portfolio_dev
+# flutter_developer_portfolio
 
 A new Flutter project.
 
