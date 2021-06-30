@@ -2,11 +2,11 @@
 // Github: ishaileshmishra
 // LinkedIn: www.linkedin/in/ishaileshmishra
 
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_dev/src/home/widgets/Util.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 
 buildCircleIndicator(_currentPos, totalCount) {
   return Padding(

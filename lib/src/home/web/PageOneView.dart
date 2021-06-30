@@ -15,6 +15,7 @@ class PageOneView extends StatefulWidget {
 
 class _PageOneViewState extends State<PageOneView> {
   int _currentPage, _totalPage;
+
   @override
   void initState() {
     super.initState();
@@ -31,7 +32,7 @@ class _PageOneViewState extends State<PageOneView> {
         alignment: AlignmentDirectional.centerEnd,
         children: [
           Image.asset(
-            'img/preview.png',
+            'img/marcelo.png',
             fit: BoxFit.contain,
           ),
           Column(

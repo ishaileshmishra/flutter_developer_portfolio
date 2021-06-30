@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
       theme: ThemeData(
-        // This is the theme of your application.
-        //primarySwatch: Colors.blueGrey,
         bottomAppBarColor: Colors.green,
-        //fontFamily: 'pt_sans',
         textTheme: GoogleFonts.righteousTextTheme(
           Theme.of(context).textTheme,
         ),

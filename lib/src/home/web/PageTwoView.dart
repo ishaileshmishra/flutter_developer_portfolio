@@ -17,6 +17,7 @@ class PageTwoView extends StatefulWidget {
 
 class _PageTwoViewState extends State<PageTwoView> {
   int _currentPage, _totalPage;
+
   @override
   void initState() {
     super.initState();
