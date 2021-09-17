@@ -21,9 +21,13 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: Color(0xff1c1c1c),
         appBar: AppBar(
           backgroundColor: Color(0xff1c1c1c),
-          leading: Icon(
-            CupertinoIcons.device_laptop,
-            size: 30,
+          leading: CircleAvatar(
+            backgroundColor: Colors.pink.shade50,
+            radius: 20,
+            child: Icon(
+              CupertinoIcons.device_laptop,
+              size: 30,
+            ),
           ),
           actions: [
             Row(
@@ -92,8 +96,11 @@ class _HomeViewState extends State<HomeView> {
             ],
           ),
         ),
-        // Builds a widget tree that can depend on the parent widget's size.
-        // [find here](https://api.flutter.dev/flutter/widgets/LayoutBuilder-class.html)
+        bottomNavigationBar: Container(
+          height: 100,
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: CommonBottonNav(),
+        ),
         body: LayoutBuilder(builder: (context, constraints) {
           if (constraints.maxWidth < 640) {
             return ViewMobile();
@@ -102,12 +109,6 @@ class _HomeViewState extends State<HomeView> {
           } else {
             return ViewWeb();
           }
-        }),
-        bottomNavigationBar: Container(
-          height: 100,
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          //color: Color(0xff1c1c1c),
-          child: CommonBottonNav(),
-        ));
+        }));
   }
 }

@@ -33,57 +33,74 @@ class _PageTwoViewState extends State<PageTwoView> {
         fit: StackFit.loose,
         alignment: AlignmentDirectional.centerEnd,
         children: [
-          //Image.asset('img/marcelo.png', fit: BoxFit.fill),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.only(left: 200),
-                child: RichText(
-                  text: new TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: 'My, ',
-                          style: GoogleFonts.righteous(
-                              color: Color(0xffc32865),
-                              fontSize: 60,
-                              fontWeight: FontWeight.normal)),
-                      TextSpan(
-                        text: "specialization",
-                        style: GoogleFonts.righteous(
-                            color: Colors.white,
-                            fontSize: 60,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ],
-                  ),
-                ),
+              buildRichText(),
+              //SizedBox(height: 40),
+              Container(
+                height: 280,
+                child: ListView.builder(
+                    itemCount: 10,
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 200),
+                    itemBuilder: (context, index) {
+                      return Card(
+                          margin: EdgeInsets.all(10),
+                          child: SpecializedColumn(
+                              title: 'MOBILE DEV', abtDescription: demoTxt));
+                    }),
               ),
-              SizedBox(height: 40),
-              Padding(
-                  padding: EdgeInsets.only(left: 200),
-                  child: SpecializationCategory()),
-              SizedBox(height: 40),
+              // Padding(
+              //     padding: EdgeInsets.only(left: 200),
+              //     child: ),
+              //SizedBox(height: 40),
               Row(
                 children: [
                   Container(
-                    width: 300,
+                    width: 200,
                     child: Divider(
                       color: Colors.white,
                       thickness: 1,
                     ),
                   ),
                   SizedBox(width: 20),
-                  Text(
+                  CupertinoButton(
+                    padding: EdgeInsets.all(8),
+                      borderRadius: BorderRadius.all(Radius.circular(2)),
+                      color: Colors.pink,
+                      child: Text(
                     'Download Resume',
                     style: GoogleFonts.righteous(fontSize: 18),
-                  )
+                  ), onPressed: null)
                 ],
               ),
             ],
           ),
           buildCircleIndicator(_currentPage, _totalPage),
+        ],
+      ),
+    );
+  }
+
+  RichText buildRichText() {
+    return RichText(
+      text: new TextSpan(
+        children: <TextSpan>[
+          TextSpan(
+              text: 'My, ',
+              style: GoogleFonts.righteous(
+                  color: Color(0xffc32865),
+                  fontSize: 60,
+                  fontWeight: FontWeight.normal)),
+          TextSpan(
+            text: "specialization",
+            style: GoogleFonts.righteous(
+                color: Colors.white,
+                fontSize: 60,
+                fontWeight: FontWeight.normal),
+          ),
         ],
       ),
     );
@@ -124,9 +141,11 @@ class SpecializedColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
+    return Padding(
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.laptop_mac,

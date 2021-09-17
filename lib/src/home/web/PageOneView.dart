@@ -31,6 +31,7 @@ class _PageOneViewState extends State<PageOneView> {
         fit: StackFit.loose,
         alignment: AlignmentDirectional.centerEnd,
         children: [
+          buildCircleIndicator(_currentPage, _totalPage),
           Image.asset(
             'img/marcelo.png',
             fit: BoxFit.contain,
@@ -47,7 +48,6 @@ class _PageOneViewState extends State<PageOneView> {
               WatchResumeClip(),
             ],
           ),
-          buildCircleIndicator(_currentPage, _totalPage),
         ],
       ),
     );
